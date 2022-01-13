@@ -41,9 +41,9 @@
         "type": "image/png"
       }
     ],
-    "name": "Food Event",
-    "short_name": "Foodies",
-    "start_url": "../index.html",
+    "name": "Budget Tracker",
+    "short_name": "Budget",
+    "start_url": "./index.html",
     "background_color": "#ffffff",
     "theme_color": "#ffffff"
   }
