@@ -8,19 +8,22 @@ const FILES_TO_CACHE = [
     "./manifest.json",
     "./css/styles.css",
     "./js/idb.js",
-    "./js/index.js",
-    "./icons/icon-72x72.png",
-    "./icons/icon-96x96.png",
-    "./icons/icon-128x128.png",
-    "./icons/icon-144x144.png",
-    "./icons/icon-152x152.png",
-    "./icons/icon-192x192.png",
-    "./icons/icon-384x384.png",
-    "./icons/icon-512x512.png"
+    "./js/index.js"
+    // "./icons/icon-72x72.png",
+    // "./icons/icon-96x96.png",
+    // "./icons/icon-128x128.png",
+    // "./icons/icon-144x144.png",
+    // "./icons/icon-152x152.png",
+    // "./icons/icon-192x192.png",
+    // "./icons/icon-384x384.png",
+    // "./icons/icon-512x512.png"
 ];
 
+console.log("Am I in the service-worker.js?");
+
 // Cache resources
-self.addEventListener("install", function (evt) {
+self.addEventListener('install', function (evt) {
+    console.log("Am I in the install step?");
     evt.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
             console.log('Your files were pre-cached successfully!');
@@ -54,7 +57,7 @@ self.addEventListener('fetch', function (evt) {
     if (evt.request.url.includes('/api/')) {
         evt.respondWith(
             caches
-                .open(DATA_CACHE_NAME)
+                .open(CACHE_NAME)
                 .then(cache => {
                     return fetch(evt.request)
                         .then(response => {
