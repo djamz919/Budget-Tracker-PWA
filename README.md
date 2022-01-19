@@ -1,7 +1,7 @@
 # Budget-Tracker-PWA
 
 ## Description
-This budget tracker application leverages PWA to serve offline functionality and MongoDB to serve as a backend database.
+This budget tracker application leverages PWA to serve offline functionality and offline persistence using IndexedDB and MongoDB to serve as a backend database.
 
 ## Table of Contents
   * [Installation](#installation)
